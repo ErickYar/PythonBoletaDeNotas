@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>boleta</title>
+    <title>registrar</title>
 </head>
+
 <body>
     <div>
-        <h2>Boleta de Notas</h2>
-        <p>Código : {{ código }}</p>
-        <p>Nombre : {{ nombre }}</p>
-        <p>Curso : {{ curso }}</p>
-        <p>Ex. parcial : {{ parcial }}</p>
-        <p>Practica : {{ practica }}</p>
-        <p>Ex. Final : {{ final }}</p>
-        <p>Promedio : {{ promedio }}</p>
-        <p>Estado : {{ estado }}</p>
-        <br>
-        <a href="{% url 'registrar' %}">Nuevo alumno</a>
+        <h2>Registrar Notas</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Procesar</button>
+        </form>
     </div>
 </body>
+
 </html>
